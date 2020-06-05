@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="player" style="height: 1000px;"></div>
+    <script src="https://clara-deployment.s3.amazonaws.com/threekit-player-bundle-preview-1.2.js"></script>
+    <script>
+      const AUTH_TOKEN = '9ec67ca0-fed1-4702-b0ca-ad2e85560e8c';
+      threekitPlayer({
+        authToken: AUTH_TOKEN,
+        el: document.getElementById('player'),
+        assetId: 'ce0d1115-aec7-43c5-80b7-141c3b3edf6c',
+        stageId: '340d46cb-e5b5-4da7-9144-5a0d59cfed8a',
+        // stageId: 'b537565e-3f95-46a7-ae58-4d840cb7633a',
+        display: 'image',
+        showConfigurator: true,
+      }).then(async (api) => {
+        window.api = api;
+        await api.when('preloaded');
+        window.player = api.enableApi('player');
+        configurator = await api.getConfigurator();
+        await api.when('loaded');
+        window.configurator = configurator;
+      });
+    </script>
+  </body>
+</html>
