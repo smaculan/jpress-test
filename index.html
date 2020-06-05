@@ -8,13 +8,12 @@
     <div id="player" style="height: 1000px;"></div>
     <script src="https://clara-deployment.s3.amazonaws.com/threekit-player-bundle-preview-1.2.js"></script>
     <script>
-      const AUTH_TOKEN = '9ec67ca0-fed1-4702-b0ca-ad2e85560e8c';
+      const AUTH_TOKEN = 'e2ac8338-f995-4087-adb9-a4b2527c5207';
       threekitPlayer({
         authToken: AUTH_TOKEN,
         el: document.getElementById('player'),
         assetId: 'ce0d1115-aec7-43c5-80b7-141c3b3edf6c',
         stageId: '340d46cb-e5b5-4da7-9144-5a0d59cfed8a',
-        // stageId: 'b537565e-3f95-46a7-ae58-4d840cb7633a',
         display: 'image',
         showConfigurator: true,
       }).then(async (api) => {
